@@ -8,4 +8,6 @@
 					.cuenta_cancion.pull-left
 						%i.icon-white.icon-music
 						%b= artista.cuenta_cancion
-					
+		
+	.dandole_bg.clearfix
+		= will_paginate @categoria, inner_window: 2

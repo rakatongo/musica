@@ -10,6 +10,7 @@ class CategoriasController < ApplicationController
 
 	def show
 		@categoria = Categoria.por_categoria(params[:category])
+		.paginate(page: params[:page],:per_page => 24)
 		respond_to do |wants|
 			wants.html
 			wants.js
