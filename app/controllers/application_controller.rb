@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include ApplicationHelper
-  before_filter :ultimas_reproducciones
+  
 
   private
   	def buscar_lista
@@ -12,7 +12,5 @@ class ApplicationController < ActionController::Base
   		@categorias = Categoria.find(:all, order: 'categoria ASC')
   	end
 
-    def ultimas_reproducciones
-      @ultimas_reproducciones = LineItem.ultimas_canciones
-    end
+    
 end

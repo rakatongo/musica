@@ -1,6 +1,7 @@
 class MusicaController < ApplicationController
 
 	def index
+		@ultimas_reproducciones = LineItem.ultimas_canciones
 		@lista = current_lista
 		respond_to do |wants|
 			wants.html
@@ -23,4 +24,11 @@ class MusicaController < ApplicationController
 			wants.json { render json: @loquesea  }
 		end
 	end
+
+	def ultimas_reproducciones
+      @ultimas_reproducciones = LineItem.ultimas_canciones
+      respond_to do |wants|
+      	wants.html { render partial: 'layouts/derecha' }
+      end
+    end
 end

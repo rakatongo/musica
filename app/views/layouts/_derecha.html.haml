@@ -1,10 +1,6 @@
-.wraper_derecha.clearfix	
-	.separador	
-		%h4 Ultimas Reproducciones
-	.scroll_derecha
-		%ul.links_chicos
-			- @ultimas_reproducciones.each do |cancion|
-				%li
-					= link_to '#',data: { cancion_id: cancion.id },class: "agregar" do
-						= content_tag(:i,'', class: "icon-music icon-white")
-						= "#{cancion.nombre_artista} - #{cancion.nombre}"
+%ul.links_chicos
+	- @ultimas_reproducciones.each do |cancion|
+		%li
+			= link_to '#',data: { cancion_id: cancion.id },class: "agregar" do
+				= content_tag(:i,'', class: "icon-music icon-white")
+				= "#{cancion.nombre_artista} - #{cancion.nombre}"

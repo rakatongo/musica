@@ -11,7 +11,7 @@ class Categoria < ActiveRecord::Base
 	# 	.joins(artistas: :canciones).group('categoria').order('categoria ASC')
 	# end
 	def self.todos
-		select('categoria,COUNT(canciones.artista_id) AS cuenta_artista,COUNT(canciones.id) AS cuenta_cancion')
+		select('categoria,COUNT(DISTINCT canciones.artista_id) AS cuenta_artista,COUNT(canciones.id) AS cuenta_cancion')
 		.joins(artistas: :canciones)
 		.group('categoria').order('categoria ASC')
 	end

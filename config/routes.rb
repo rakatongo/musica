@@ -5,8 +5,11 @@ Musica::Application.routes.draw do
 
   root to: "musica#index"
 
+  get '/ultimas', to: 'musica#ultimas_reproducciones'
+
   get '/searching', to: 'musica#searching'
   get '/search', to: 'musica#search'
+
 
   get '/artistas', to: 'artistas#index'
   get '/artista/:nombre', to: 'artistas#show', as: 'show_artista'

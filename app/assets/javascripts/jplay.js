@@ -1,13 +1,26 @@
-$(document).ready(function() {	
-	
-	$('.wraper_derecha').hide()
-	function refrescar_lista_derecha () {
-		setTimeout(function() {
-			$('.wraper_derecha').fadeIn('slow')
-			$('.scroll_derecha').jScrollPane();
-		},5000)
-	}
+$(document).ready(function() {		
 
+	$('.wraper_derecha').hide().delay(5000).fadeIn(function() {
+		$('.scroll_derecha').jScrollPane()
+	})
+
+	function refrescar_lista_derecha () {		
+		setInterval(function() {
+			$('.wraper_derecha').fadeIn('slow')
+			$.ajax({
+			  type: 'GET',
+			  url: '/ultimas',
+			  data: {},
+			  success: function(data) {
+			  	$('.clase_derecha').fadeOut(function() {
+			  		$('.clase_derecha').html(data)			  		
+			  		$(this).fadeIn('slow')			  					  		
+			  	})
+			  }		  
+			});	
+			$('.scroll_derecha').jScrollPane()
+		},20000)
+	}
 	refrescar_lista_derecha()
 
 	var currentTrack = 0;
@@ -123,6 +136,10 @@ $(document).ready(function() {
 		$('item_'+ $(this).attr('data-item-id')).fadeOut()
 		e.preventDefault()
 	})
+	$('.descargar').live('click', function(e) {
+		refreshPlayList()		
+		e.preventDefault()
+	})
 
 	// Will paginate AJAX
 	$('.pagination a').live('click',function(e) {
@@ -130,4 +147,5 @@ $(document).ready(function() {
 		$.getScript(this.href)
 		e.preventDefault()
 	})
+
 })

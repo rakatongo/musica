@@ -4,8 +4,7 @@ var links = [
 			"http://i.imgur.com/aA3m5.jpg",
 			"http://i.imgur.com/3VT9U.jpg",			
 			"http://i.imgur.com/oJfGa.jpg", 
-			"http://i.imgur.com/mJNjo.jpg",
-			"http://i.imgur.com/FLmjn.jpg",
+			"http://i.imgur.com/mJNjo.jpg",			
 			"http://i.imgur.com/U8TkE.jpg",
 			"http://i.imgur.com/xC16W.jpg"
 		]

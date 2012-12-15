@@ -9,7 +9,7 @@ class ArtistasController < ApplicationController
 	
 	def show
 		@artista = Artista.find_by_nombre(params[:nombre])
-		@canciones = @artista.canciones
+		@canciones = @artista.canciones.order('nombre_cancion ASC')
 		respond_to do |wants|
 			wants.js
 		end
