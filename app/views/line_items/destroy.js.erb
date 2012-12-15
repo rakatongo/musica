@@ -1,0 +1,9 @@
+$('#item_<%= @line_destroy.id %>').fadeOut('fast',function() {	
+	$(this).remove()
+	$('.lista_de_canciones_de_usuario').jScrollPane();
+	if ($('.jspPane').height() < 490) {
+		var otro = $('.jspPane').height()
+		$('.lista_de_canciones_de_usuario .jspContainer')
+		.animate({height: '-=' + ($('.jspContainer').height() - otro )})
+	}
+})

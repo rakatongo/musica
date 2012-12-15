@@ -1,0 +1,6 @@
+.row.artistas_wrapper
+	.letras
+		= render 'letras'
+	= render 'tabla_artista'
+.row.dandole_bg.clearfix
+	= will_paginate @artistas, inner_window: 2

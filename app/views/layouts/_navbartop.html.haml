@@ -1,0 +1,10 @@
+#navbartop
+	= link_to "Sonido Basico", root_path, class: "nav_icon_top", remote: true
+	.search_barra
+		= form_tag search_path, method: :get , remote: true do
+			= search_field_tag :buscar,'', placeholder: "Buscar...",
+				class: "searchinput search_button", data: { provide: "typehead" },
+				autocomplete: 'off',id: 'otro_id'
+			= button_tag 'BUSCAR'
+	= link_to "Artistas A-Z", artistas_path, remote: true, class: "normal_link_nav"
+	= link_to "Categorias", categorias_path, remote: true, class: "normal_link_nav"

@@ -1,0 +1,15 @@
+%table.table-striped#canciones_de_tabla	
+	%tr
+		%th
+		%th Cancion
+		%th  
+		%th.text-mid Duracion
+	- @canciones.each do |cancion|
+		%tr
+			%td.imagen= image_tag cancion.imagen_url
+			%td.nombre= link_to cancion.nombre_cancion,'#',class: "agregar",data: { cancion_id: cancion.id }
+			%td.maswidth
+				= link_to content_tag(:i,'',class: "icon-white icon-play"),'#',
+				class: "agregar",data: { cancion_id: cancion.id }					 
+				= link_to content_tag(:i,'',class: "icon-plus icon-white"),'#', class: "stop-musica"
+			%td= cancion.duracion

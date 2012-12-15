@@ -1,0 +1,13 @@
+.row.categorias_wrapper	
+	#categoria_wrap
+		- @categorias.each do |categoria|
+			.span3
+				.imagen_y_texto.clearfix			
+					= link_to categoria.categoria, show_categoria_path(categoria.categoria), remote: true
+				.separating.clearfix
+					.cuenta_cancion.pull-left
+						%i.icon-white.icon-music
+						%b= categoria.cuenta_cancion
+					.mostrar_categoria.pull-right
+						%i.icon-white.icon-user
+						%b= categoria.cuenta_artista

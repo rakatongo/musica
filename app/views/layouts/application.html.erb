@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Musica</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="background">	
+	<img class="show" src="http://i.imgur.com/mJNjo.jpg">	
+</div>		
+<%= render 'layouts/navbartop' %>
+<div class="row" id="wrapper_body">
+	<div class="span5" id="canciones_usuario_wrapper">
+		<%= render 'layouts/lista_canciones' %>
+	</div>
+	<div class="span9 offset5">
+		<div class="wrapper_general">
+			<div class="middle_wrapper">
+				<%= yield %>
+			</div>			
+		</div>		
+	</div>
+	<nav class="span3">
+		<%= render 'layouts/derecha' %>
+	</nav>
+</div>
+</body>
+</html>

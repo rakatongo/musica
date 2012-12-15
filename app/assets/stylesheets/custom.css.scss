@@ -1,0 +1,926 @@
+
+@import "bootstrap";
+
+
+/* VARIABLES */
+$naranja: #FF5500;
+$naranja_fuerte: #ff5900;
+$azul_transparente: rgba(00,170,240,.3);
+$azul_claro: rgba(0,210,250,.7);
+$blanco_transparente: rgba(250,250,250,.1);
+$negro_transparente: rgba(10,10,10,.8);
+$gris_claro: rgba(50,50,50,.9);
+$blanco_no_tan_blanco: #aaa;
+@mixin todos{
+	-webkit-transition: all .3s ease-in;
+	-moz-transition: all .3s ease-in;
+	-ms-transition: all .3s ease-in;
+	transition: all .3s ease-in;
+}
+
+
+/* GENERAL */
+html{
+	background-color: $white;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+body{
+	background-color: rgba(250,250,250,.0);
+}
+.span4{
+	background-color: rgba(10,10,10,.5);
+}
+#wrapper_body{
+	margin-top: 80px;
+}
+
+
+/* NAVBAR TOP */
+#navbartop{
+	overflow: hidden;
+	background-color: $negro_transparente;
+	position: fixed;
+	display: block;
+	top: 0px;
+	left: 0px;
+	height: 70px;
+	width: 100%;
+	text-align: left;
+	color: $blue;	
+	.nav_icon_top{
+		margin: 20px 10px 10px 15%;
+		font-size: 2.4em;
+		display: inline;
+		line-height: 70px;
+		text-decoration: none;
+		color: $blanco_no_tan_blanco;
+		font-weight: bold;
+		padding: 13px;
+		vertical-align: baseline;
+		@include todos;
+	}
+	.nav_icon_top:hover{
+		background-color: $azul_transparente;		
+		color: $blanco_no_tan_blanco;
+		@include todos;
+	}	
+	.normal_link_nav{
+		padding: 30px;
+		background-color: none;
+		color: $blanco_no_tan_blanco;
+		font-size: 1.5em;
+		text-decoration: none;		
+		margin: 0px;
+		text-shadow: 0 1px $black;
+		@include todos;
+	}
+	.normal_link_nav:hover{
+		background-color: $blanco_transparente;
+		@include todos;
+	}
+}
+
+/* SEARCH STUFF */
+.typeahead.dropdown-menu{
+	background-color: $azul_transparente;
+	a{
+		color: $white;
+	}
+	
+}
+.search_barra{
+	display: inline-block;	
+	input[type=search]{		
+		background: $azul_transparente;
+		color: $white;
+		border: 0;
+		width: 250px;
+		font-size: 1.2em;
+		vertical-align: middle;
+		padding: 6px;
+	}
+	button{
+		vertical-align: middle;
+	    display: inline-block;
+	    position: relative;
+	    top: -4px;
+	    border: 0;
+	    padding: 0;
+	    margin: 0 100px 0 -5px;
+	    cursor: pointer;
+	    height: 35px;
+	    width: 110px;
+	    font: bold 16px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+	    color: #fff;
+	    text-transform: uppercase;
+	    background: $azul_claro;
+	    border-radius: 0 3px 3px 0; 
+	    line-height: 30px;		          
+	    b{
+	    	display: inline-block;
+	    	margin-right: 5px;
+
+	    }
+	}
+	button:before { /* left arrow */
+	    content: '';
+	    position: absolute;
+	    border-width: 8px 8px 8px 0;
+	    border-style: solid solid solid none;
+	    border-color: transparent $azul_claro transparent;
+	    top: 8px;
+	    left: -8px;
+	}
+	input::-webkit-input-placeholder {	  
+	    letter-spacing: 2px;	   
+	    font-style: italic;
+	    
+	}
+	input:-moz-placeholder {
+		letter-spacing: 2px;	   	    
+	    font-style: italic;
+	}
+	input:-ms-input-placeholder { 
+		letter-spacing: 2px;	   	    
+	    font-style: italic;
+	}
+	input:-o-input-placeholder { 
+		letter-spacing: 2px;	   	    
+	    font-style: italic;
+	}
+}
+
+/* SPAN 4 CATEGORIAS NANBAR */
+.wraper_derecha{
+	background-color: inherit;
+	overflow: auto;	
+	max-height: 85%;
+	ul{
+		list-style-type: none;		
+	}
+	a{
+		padding: 3px 3px 3px 20px;
+		display: block;
+		color: $azul_claro;
+		font-size: 1.2em;
+		text-decoration: none;
+		background-color: inherit;
+		font-weight: bold;
+		@include todos;
+	}
+	li{
+		margin: 5px 0 5px 0;
+		
+	}
+	a:hover{		
+		color: $naranja_fuerte;	
+		background-color: $azul_transparente;	
+		@include todos;
+	}
+	h3{
+		background-color: $azul_transparente;
+		margin: 0 0 15px 0;
+		font-size: 2em;
+		color: $naranja;
+		padding: 10px;
+	}	
+}
+.scroll_derecha ul.links_chicos li a{
+	font-size: .7em;
+}
+.scroll_derecha ul{
+	text-align: left;
+	margin: 0;
+	li{
+		margin: 0;
+	}
+}
+
+/* INDEX CAJA BUSCADOR */
+.index_search{	
+	text-align: center;
+	.caja{
+		margin: 80px auto;
+		min-width: 60%;
+		min-height: 300px;
+		background-color: $negro_transparente;
+		box-shadow: 0 0 20px $black;
+		border-radius: 20px;
+		input[type="search"]{
+			width: 300px;
+			background-color: $azul_transparente;
+			padding: 10px;
+			color: $white;
+		}
+		button{
+			margin-right: 0px;
+			height: 42px;
+		}
+		button:before { /* left arrow */
+		    content: '';
+		    position: absolute;
+		    border-width: 8px 8px 8px 0;
+		    border-style: solid solid solid none;
+		    border-color: transparent $azul_claro transparent;
+		    top: 12px;
+		    left: -8px;
+		}
+		h1{
+			color: $azul_claro;
+			font-size: 3.5em;
+			letter-spacing: 4px;
+			line-height: 40px;
+			padding: 40px;
+		}
+		.word{
+			color: $green;
+		}
+	}
+}
+
+/* PAGINA DE BUSQUEDA */
+.busqueda_wrapper{
+	background-color: $negro_transparente;	
+	color: $blue;
+	text-align: center;	
+	padding: 0px 0 20px 0;	
+	h3{
+		color: $naranja;
+		background-color: $azul_transparente;
+		padding: 10px;
+		margin: 0px 0 15px 0;
+		font-size: 2em;
+	}	
+}
+table#canciones_de_tabla{
+	text-align: left;		
+	width: 100%;
+	color: $azul_claro;
+	max-height: 600px;
+	text-shadow: 0 3px 2px $black;	
+	img{
+		height: 30px;
+		width: 30px;
+
+	}		
+	th.maswidth{
+		text-align: center;
+	}
+	a{		 
+		color: inherit;
+		text-decoration: none;
+		@include todos;
+	}
+	a:hover{
+		@include todos;
+	}
+	.nombre{
+		a{
+			font-size: .9em;
+			display: block;
+			padding: 5px;
+		}
+		a:hover{
+			background-color: $azul_transparente;
+		}
+	}
+	.imagen{
+		width: 40px;
+	}
+
+}
+.maswidth{
+	width: 60px;
+}	
+.artista_nombre{
+	max-width: 200px;
+	a{
+		display: block;
+		padding: 5px;
+	}
+	a:hover{
+		background-color: $negro_transparente;
+	}
+}	
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th{
+	color: $green;
+	background-color: $blanco_transparente;			
+}	
+tbody tr td:last-child{
+	text-align: center;
+	padding-right: 10px;
+}
+	/* BOTON PLAY EN TABLA */
+.agregar{
+	padding: 5px;
+}
+.agregar:hover{
+	background-color: $blanco_transparente;
+}
+.agregar_a_lista{
+	padding: 5px;	
+}
+.agregar_a_lista:hover{
+	background-color: $blanco_transparente;
+}
+
+/* LISTAS DE ARTISTAS EN SEARCH */
+.lista_de_artistas{
+	text-align: left;
+	padding: 5px;
+	border-bottom: 1px solid $gray;
+	margin-bottom: 10px;
+	ul{
+		list-style-type: none;
+	}
+	li{
+		margin: 0px 9% 0px 0;
+		display: inline-block;
+		width: 40%;
+		border-top: 1px solid $gray;
+		font-size: 1.2em;
+		padding: 5px 0 5px 0;
+		@include todos;
+	}
+	li:hover{
+		background-color: $blanco_transparente;
+		@include todos;
+	}
+	a{
+		margin: 0;	
+		padding-bottom: 30px;	
+		display: block;
+		text-shadow: 0 2px 6px black;
+		text-decoration: none;
+		@include todos;
+	}
+	a:hover{
+		color: $naranja;		
+		@include todos;
+	}
+	img{
+		float: left;
+		margin-right: 5px;		
+	}
+}
+/* WILL PAGINATE  */
+.dandole_bg{
+	background-color: $blanco_transparente;
+	text-align: center;
+}
+
+.pagination{
+	background-color: $negro_transparente;	
+	text-align: center;
+	margin: 0px;	
+	border: 0;
+	float: none;
+	a{		
+		background-color: inherit;
+		border: 0;
+		display: inline;
+		color: $naranja_fuerte;		
+		@include todos;
+	}
+	a:hover{
+		text-shadow: 0 3px 2px $black;		
+		background-color: $gris_claro;
+		@include todos;
+	}
+	em{
+		float: left;
+		display: inline-block;
+		padding: 9px 14px;
+		border-bottom: 0;		
+		opacity: .5;
+		background-color: $negro_transparente;
+		color: $gray;
+	}
+	span{
+		border: 0;
+	}
+	.previous_page, .next_page{
+		background-color: transparent;
+	}
+	.disabled{
+		color: $gray;
+		font-style: italic;
+		background-color: $negro_transparente;
+		opacity: .6;
+	}
+	.gap{
+		color: $gray;
+		background-color: $negro_transparente;
+		opacity: .6;
+	}
+}
+
+/* REPRODUCTOR */
+/* HEADER DE CONTROLES */
+div.jp-audio ul.jp-controls{
+		padding: 0px;
+	}
+#jp_container_1{
+	width: 99%;
+	background-color: transparent;
+	border: 0;
+	box-shadow: 0 0 15px $black;
+	.jp-type-single{
+		background-color: transparent;	
+		div.jp-interface{
+			background-color: $negro_transparente;	
+		}	
+	}
+
+	/* CONTROLES */
+	ul.jp-controls{
+		width: inherit;
+		padding-right: 0px;
+		margin: 0px;
+		li{
+			text-align: center;
+			height: 20px;		
+		}
+	}
+	#jp_container_1{
+		background-color: transparent;
+
+	}
+	/* PLAY BOTON */
+	#p_play{	
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		display: inline;
+		float: none;
+		padding: 5px;	
+	}
+	#p_play:hover{
+		background: $blanco_transparente;
+	}
+
+	/* PAUSE BOTON */
+	#p_pause{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		display: inline;
+		float: none;
+		padding: 5px;	
+	}
+	#p_pause:hover{
+		background: $blanco_transparente;
+	}
+
+	/* STOP BUTON */
+	#p_stop{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		text-align: center;
+		height: 20px;
+		display: inline;
+		padding: 5px;			
+	}
+	#p_stop:hover{
+		background: $blanco_transparente;
+	}
+
+	/* MUTE BUTON */
+	#p_mute{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		text-align: center;
+		height: 20px;
+		display: inline;
+		padding: 5px;				
+	}
+	#p_mute:hover{
+		background: $blanco_transparente;
+	}
+	/* UNMUTE BUTON */
+	#p_unmute{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		text-align: center;
+		height: 20px;
+		display: inline;
+		padding: 5px;				
+	}
+	#p_unmute:hover{
+		background: $blanco_transparente;
+	}
+	/* MAX BOLUMEN */
+	#p_max{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		text-align: center;
+		height: 20px;
+		display: inline;	
+		padding: 5px;			
+	}
+	#p:hover{
+		background: $blanco_transparente;
+	}
+	#p_repeat{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		text-align: center;
+		height: 20px;
+		display: inline;	
+		padding: 5px;			
+	}
+	#p_repeat:hover{
+		background: $blanco_transparente;
+	}
+	#p_repeat_off{
+		background-image: none;
+		background-color: transparent;
+		text-indent: 0;
+		line-height: 20px;
+		text-align: center;
+		height: 20px;
+		display: inline;	
+		padding: 5px;			
+	}
+	#p_repeat_off:hover{
+		background: $blanco_transparente;
+	}
+}
+
+/* BARRA de POSICIOn*/
+div.jp-audio div.jp-progress{
+	top: 5px;	
+}
+div.jp-audio div.jp-type-single div.jp-progress{
+	left: 71px;
+}
+/* VOLUMEN BAR */
+div.jp-audio div.jp-volume-bar{
+	top: 10px;
+	left: 297px;
+}
+div.jp-audio div.jp-type-single div.jp-time-holder{
+	left: 60px;
+	top: 40px;	
+	ul.jp-toggles{
+		padding: 0px;
+		text-align: center;
+	}
+	ul.jp-toggles li a{
+			background-image: none;
+			background-color: transparent;
+			text-indent: 0;
+			line-height: 20px;
+			text-align: center;	
+			display: inline;
+			text-indent: 0;
+
+		}
+		ul.jp-toggles li a:hover{
+			background-image: none;
+			background-color: $blanco_transparente;
+		}			
+}
+/* TITULO */
+	div.jp-title, div.jp-playlist{
+		border-top: 1px dashed $gray;
+		background-color: $negro_transparente;	
+		color: $orange;
+}
+
+/* LISTA DE USUARIO */
+#canciones_usuario_wrapper{
+	position: fixed;
+}
+.lista_de_canciones_de_usuario{	
+	max-height: 500px;
+	min-height: 1px;
+}
+.jspScrollable:focus{
+	border: 0px;
+	outline: none;
+}
+
+#tabla_usuario{
+	background-color: $negro_transparente;
+	margin-bottom: 10px;
+	color: $azul_claro;	
+	text-align: left;
+	text-shadow: 0 2px 3px $black;
+	box-shadow: 0 0 20px $black;
+	width: 100%;
+	font-size: .9em;
+	tr{
+		background-color: $blanco_transparente;
+		border-top: 2px solid $black;		
+	}	
+	tr:first-child{
+		border-top: 0;
+	}
+	a{
+		color: $azul_claro;
+		text-shadow: 0 2px 4px $black;
+		background-color: inherit;	
+		text-decoration: none;	
+		display: block;
+		padding: 3px;
+		margin: 0px;
+	}
+	a:hover{
+		background-color: $azul_transparente;
+		@include todos;
+	}
+	caption{
+		background-color: $blanco_transparente;
+		font-size: 1.4em;
+		padding: 5px;
+		color: $naranja_fuerte;
+	}
+	td.nombre_de_cancion{
+		width: 50%;
+		a{
+			font-size: 1em;
+			background-color: transparent;
+		}
+	}
+	td.play_chicos{
+
+	}
+	td.play_chicos a{
+		padding: 0px;
+		width: 15px;
+		display: inline-block;
+		background-color: transparent;
+	}
+	td.artistas{
+		margin: 0px;
+		width: 30%;
+		a{
+			font-size: 1em;
+			margin: 0px;			
+			&:hover{
+				background-color: transparent;
+			}
+		}
+	}
+	.active{
+		background-color: $blanco_transparente;
+		td{
+			background-color: $azul_transparente;
+			a{
+				background-color: transparent;
+			}
+			a:hover{
+				background-color: transparent;
+			}
+		}
+	}
+}
+.div_lista_wraper{
+	background-color: $negro_transparente;
+}
+
+/* PRUEBA BACKGROUND */
+div.background {
+position:absolute;
+left:0px;
+top:0px;
+z-index:-1;
+
+}
+div.background img {
+position:fixed;
+list-style: none;
+left:0px;
+top:0px;
+width: 100%;
+height: 100%;
+}
+div.background ul li.show {
+z-index:500
+}
+div.background {
+	position:fixed;
+	left:0px;
+	top:0px;
+	z-index:-1;
+}
+div.background img {
+	position:fixed;
+	list-style: none;
+	left:0px;
+	top:0px;
+}
+div.background ul li.show { z-index:500 }
+
+/* LISTA DE TODOS LOS ARTISTAS  Y LISTA DE TODAS LAS CATEGORIAS*/
+.artistas_wrapper, .categorias_wrapper{
+	.span3{
+		margin: 10px;
+		background-color: $negro_transparente;
+		min-height: 100px;		
+		box-shadow: 0 0 15px $black;
+		text-shadow: 0 2px 4px $black;
+	}
+	.imagen_y_texto{
+		overflow: hidden;
+		img{			
+			height: 60px;
+			width: 60px;
+			margin-right: 5px;
+			display: block;
+		}		
+		a{
+			display: block;				
+			word-wrap: break-word;
+			color: $blanco_no_tan_blanco;
+			font-size: 1.4em;
+			text-decoration: none;
+			@include todos;		
+		}
+		a:hover{			
+			color: $naranja_fuerte;
+			@include todos;
+		}
+	}	
+	.cuenta_cancion{
+		text-align: center;
+		width: 60px;
+		display: block;
+		clear: both;
+		font-size: .9em;
+	}
+	.mostrar_categoria{
+		margin-right: 5px;
+		display: inline-block;
+	}
+	.separating{
+		background-color: $blanco_transparente;
+		margin-top: 10px;
+		color: $azul_claro;
+		padding-top: 0px;
+		margin-bottom: 0px;		
+		position: relative;
+		bottom: 0px;
+
+	}
+	.pagination{
+		background-color: $negro_transparente;
+		a{
+			color: $orange;
+		}
+	}
+}
+/* LISTA UL A-Z */
+.letras{
+	text-align: center;
+	padding: 0;
+	margin: 5px;
+	ul{
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		background-color: $negro_transparente;
+		display: block;
+	}
+	li{
+		display: inline-block;		
+		a{
+			text-decoration: none;
+			padding: 10px 6px 10px 6px;
+			color: $naranja_fuerte;
+			display: inline-block;
+			@include todos;
+		}
+		a:hover{
+			color: $azul_transparente;			
+			@include todos;
+		}
+	}
+}
+#categoria_wrap{
+	max-height: 635px;
+	.span3{
+		min-height: 50px;
+		margin: 10px 5px 10px 5px;
+	}
+	.imagen_y_texto{
+		text-align: center;
+	}
+}
+/* MOSTRAR A SINGLE ARTISTA */
+.text-mid{
+	text-align: center;
+}
+.single_artista_wrapper{
+	max-height: 600px;
+	.nombre{
+		width: 70%;
+	}
+}
+.single_artista{
+	background-color: $negro_transparente;
+	header{
+		padding: 15px;
+		text-align: center;
+		color: $azul_claro;
+		box-shadow: 0 4px 10px $black;
+		text-shadow: 0 2px 10px $blue;
+		img{
+			margin: 0 10px 0 0;
+			width: 80px;
+			height: 80px;
+		}
+	}	
+}
+
+/* MOSTRAR ARTISTAS A-Z Y CATEGORIAS */
+.wraper_derecha{
+	overflow:hidden;
+	position: fixed;
+	background-color: $negro_transparente;
+	padding: 20px 0 20px 0;	
+	opacity: .8;
+	ul{
+		list-style-type: none;
+	}
+	li{
+		text-align: left;
+		display: block;
+		margin-right: 10px;
+		a{
+			display:block;			
+			color: $naranja_fuerte;
+			font-size: 1.5em;
+			text-decoration: none;
+			padding: 5px;			
+			text-shadow: 0 2px 4px $black;
+			@include todos;
+		}
+		a:hover{
+			background-color: $azul_transparente;
+			@include todos;
+		}
+	}
+	h4{
+		text-align: center;
+		color: $azul_claro;
+		background-color: $blanco_transparente;
+		padding: 10px;
+	}
+}
+.categoria_y_artistas{
+	ul{
+
+	}
+	li{
+		text-align: center;
+		margin-right: 20px;
+		a{
+			color: $blanco_no_tan_blanco;			
+			font-size: 1.2em;
+		}
+		a:hover{
+			color: $blanco_no_tan_blanco;
+			background-color: $blanco_transparente;
+		}
+	}	
+}
+
+/* SCROLLABLE */
+.scroll_derecha{
+	height: 500px;	
+	overflow: auto;	
+}
+.jspVerticalBar{
+		background-color: $blanco_transparente;
+		border-radius: 20px;
+}
+.jspTrack{
+	background-color: transparent;
+}
+.jspDrag{
+	background-color: $azul_transparente;
+	border-radius: 20px;
+}
+.jspPane{
+	padding-bottom: 5px;
+}
+.jspContainer:active, .jspContainer:focus{
+	border: 0px;
+}

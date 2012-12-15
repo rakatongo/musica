@@ -1,0 +1,11 @@
+.row.categorias_wrapper	
+	#categoria_wrap
+		- @categoria.artistas.each do |artista|
+			.span3
+				.imagen_y_texto.clearfix			
+					= link_to artista.nombre, show_artista_path(artista.nombre)
+				.separating.clearfix
+					.cuenta_cancion.pull-left
+						%i.icon-white.icon-music
+						%b= artista.canciones.count
+					

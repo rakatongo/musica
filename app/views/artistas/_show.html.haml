@@ -1,0 +1,5 @@
+.single_artista.clearfix
+	%header		
+		%h2= @artista.nombre
+	.single_artista_wrapper
+		= render 'layouts/tabla_canciones', collection: @canciones

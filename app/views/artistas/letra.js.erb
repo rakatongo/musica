@@ -1,0 +1,9 @@
+var pagina = $('<%= escape_javascript(render(partial: "letra")) %>')
+$('.middle_wrapper').fadeOut('fast',function() {
+	$('.middle_wrapper > div').remove()
+	pagina.appendTo($(this))
+	$(this).fadeIn('slow',function() {
+		$('.single_artista_wrapper').jScrollPane();	
+	})	
+	
+})

@@ -1,0 +1,13 @@
+%tr{id: "item_#{item.id}"}
+	%td.artistas= link_to (truncate(item.cancion.nombre_artista, length: 15)),
+		show_artista_path(item.cancion.nombre_artista), remote: true,
+		title: item.cancion.nombre_artista, rel: 'tooltip'
+	%td.nombre_de_cancion= link_to truncate(item.cancion.nombre_cancion, length: 25),'#RAKUN!',
+		class: "reproducir", data: { nombre: format_nombre(item.cancion), url: item.cancion.cancion_url }, title: item.cancion.nombre_cancion, rel: 'tooltip'
+	%td.play_chicos
+		= link_to content_tag(:i,'',class: "icon-white  icon-play-circle"),'#RAKUN!',
+		class: "reproducir", data: { nombre: format_nombre(item.cancion), url: item.cancion.cancion_url },title: 'Reproducir', rel: "tooltip"
+		= link_to content_tag(:i, '', class: "icon-white  icon-remove-circle"),
+		line_item_path(item.id), method: :delete, remote: true, title: 'Borrar', class: "borrando"
+		= link_to content_tag(:i, '', class: "icon-white icon-download"), item.cancion.cancion_url,
+		title: 'Descargar.Click Derecho: Guardar enclace como....', rel: "tooltip", class: "descargar",data:{ item_id: item.id}

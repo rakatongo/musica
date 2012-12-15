@@ -1,0 +1,8 @@
+var tr = $('<%= escape_javascript(render(partial: "layouts/tr", object: @item, as: "item")) %>')
+tr.appendTo('#tabla_usuario')
+$('.lista_de_canciones_de_usuario').jScrollPane();
+if ($('.jspPane').height() < 540) {					
+	var height = $('.lista_de_canciones_de_usuario .jspPane').height() - $('.lista_de_canciones_de_usuario .jspContainer').height()				
+	$('.lista_de_canciones_de_usuario .jspContainer').animate({height: '+=' + height})
+}
+

@@ -1,0 +1,4 @@
+.lista_de_canciones_de_usuario		
+	%table#tabla_usuario		
+		= render partial: "layouts/tr", collection: current_lista.line_items.all, as: "item"
+= render 'layouts/sonido'

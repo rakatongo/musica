@@ -1,0 +1,33 @@
+.busqueda_wrapper
+	%h3 Resultados
+	%h4 Artistas
+	.lista_de_artistas	
+		%ul
+			- @artistas.each do |artista|
+				%li 
+					= image_tag artista.imagen_url
+					= link_to artista.nombre, show_artista_path(artista.nombre), remote: true
+	%table.table-striped#canciones_de_tabla	
+		%thead	
+			%tr	
+				%th			
+				%th Artista
+				%th Cancion
+				%th.maswidth 
+				%th Duracion		
+		- @busqueda.each do |busqueda|
+			%tr				
+				%td= image_tag(busqueda.imagen_url)
+				%td.artista_nombre{title: busqueda.nombre_artista}					
+					= link_to (truncate(busqueda.nombre_artista, length: 30)),
+					 show_artista_path(busqueda.nombre_artista), remote: true
+				%td.nombre
+					= link_to (truncate busqueda.nombre_cancion, length: 45),'#',
+					data: { cancion_id: busqueda.id }, class: 'agregar'
+				%td.maswidth
+					= link_to content_tag(:i,'',class: "icon-white icon-play"), '#',
+						data: { cancion_id: busqueda.id }, class: 'agregar'
+					= link_to content_tag(:i,'',class: "icon-plus icon-white"),'#',
+					data: { cancion_id: busqueda.id }, class: 'agregar agregar_a_lista'
+				%td= busqueda.duracion			
+	= will_paginate @busqueda, inner_window: 2, outer_window: 2
