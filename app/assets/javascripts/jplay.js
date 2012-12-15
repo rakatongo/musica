@@ -148,4 +148,12 @@ $(document).ready(function() {
 		e.preventDefault()
 	})
 
+	// Tooltip
+	$('body').tooltip({
+    	selector: '[rel=tooltip]'
+	});
+	$('#tabla_usuario').tooltip({
+    	selector: '[class=borrando]'
+	});
+
 })
