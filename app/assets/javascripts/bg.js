@@ -10,7 +10,7 @@ var links = [
 		]
 var current = 0	
 function thebackground() {	
-	setInterval('change()',6000);	
+	setInterval('change()',25000);	
 }
 
 function change() {			
